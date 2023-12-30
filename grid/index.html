@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        /* 3x2 */
+        /* grid-template-rows: repeat(3, 100px);
+        grid-template-columns: repeat(2, 100px); */
+        grid-template: repeat(3, 100px) / 30fr 70fr; /* shortcut syntax 2 to 1 */
+        /* specify areas names and then use them on grid-area property to increase readability */
+        grid-template-areas: "header header" "sidebar main" ". footer"; /* . to leave empty otherwise the footer would occypy the whole last 4th row */
+        gap: 10px;
+        border: 3px solid lightgray;
+        justify-items: stretch; /* align horizontally, default value: stretch */
+        align-items: stretch; /* align vertically, default value: stretch */
+
+        justify-content: center; /* align the container horizontally */
+        align-content: center;
+
+        height: 100vh;
+      }
+
+      .box {
+        /* if you remove the width or height and set justify-items, align-items to strect it will occupy the whole width,height */
+        /* width: 5rem;
+        height: 5rem; */
+        background-color: gold;
+      }
+
+      .box-one {
+        grid-column: 1 / span 2; /* span to specify how many cells it is going to take */
+        grid-area: header;
+      }
+
+      .box-four {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box-one">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+      <div class="box box-four">D</div>
+    </div>
+  </body>
+</html>
