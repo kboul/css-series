@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <style>
+      navbar {
+        display: flex;
+        justify-content: flex-end;
+        background-color: black;
+        color: gray;
+      }
+
+      navbar > p {
+        margin-right: 10px;
+      }
+
+      @media screen and (max-width: 768px) {
+        navbar {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+      <navbar>
+        <p>About</p>
+        <p>Courses</p>
+        <p>Forum</p>
+        <p>Learning Paths</p>
+        <p>Contact</p>
+      </navbar>
+    </div>
+  </body>
+</html>
